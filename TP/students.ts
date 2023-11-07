@@ -16,6 +16,5 @@ const groupeSize = 16;
 
 function createStudentGroups(students:number, groupeSize: number) {
     for (let i = 0; i < students.length; i++){
-        return groups = 
     }
 }

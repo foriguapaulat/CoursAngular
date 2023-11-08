@@ -1,0 +1,37 @@
+<p>pastries works!</p>
+<section class="pastries-cards">
+    <h1>{{ titlePage }}</h1>
+        <div>
+            <ul *ngIf="pastries" class="list-inline">
+
+                <li class="list-inline-item" *ngFor="let pastrie of pastries">
+                    <div class="title">
+                        <h2>{{pastrie.ref}}</h2>
+                    </div>
+                    <span class="badge badge-info">{{ pastrie.id }}</span>
+                    <div class="name">
+                        <h3>{{ pastrie.name }}</h3>
+                    </div>
+                    <div class="card">
+                        <button (click)="onSelect(pastrie)">Sélectionner</button>
+                    </div>
+                    
+                    <div class="description">
+                        <p>{{ pastrie.description }}</p>
+                    </div>
+                    <div class="tags">
+                        {{ pastrie.tags }}
+                    </div>
+                    <div class="like">
+                        <p>{{ pastrie.like }}{{ pastrie.quantity}} unités disponibles</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="col-sm-4 video">
+            <!-- PastrieDetails communication parent vers enfant -->
+            <app-pastrie-details [pastrie]="selectedPastrie" ></app-pastrie-details>
+        </div>
+    </section>    

@@ -1,13 +1,4 @@
-export class Pastrie {
-    constructor() {
-        this.id = id;
-        this.ref = ref;
-        this.name = name;
-        this.description = description;
-        this.quantity = quantity;
-        this.order = order;  
-    }
-
+export interface Pastrie {
     id: string;
     ref: string;
     name: string;	
@@ -15,11 +6,12 @@ export class Pastrie {
     quantity: number;
     order: number;
     url?: string;
-    tags?: Array;
+    tags?: string[];
     like?: string;
-    
-    
     
 }
 
-const psastrie = new Pastrie; 
+export interface List {
+    id: string;
+    list: string[];
+}

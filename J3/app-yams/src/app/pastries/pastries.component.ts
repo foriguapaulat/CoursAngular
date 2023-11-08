@@ -13,9 +13,16 @@ export class PastriesComponent implements OnInit {
     
     titlePage: string = "Page principale : liste des pâtisseries à gagner";
     pastries: Pastrie[] = PASTRIES;
-    
+    selectedPastrie: Pastrie| null= null;
+
     constructor() { }
     
     ngOnInit() {
+    }
+
+    onSelect(pastrie:Pastrie){
+        this.selectedPastrie = pastrie;
+        console.log(pastrie);
+
     }
 }

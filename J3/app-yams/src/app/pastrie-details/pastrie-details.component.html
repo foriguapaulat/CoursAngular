@@ -1,0 +1,21 @@
+<p>pastrie-details works!</p>
+<section *ngIf="pastrie">
+    <div class="img">
+        <img src="" alt="">
+    </div>
+    <div class="pastrie-card">
+        <h2>{{pastrie.ref}}</h2>
+        <h3>Nom: {{pastrie.name}}</h3>
+        <button>Desc>></button>
+    </div>
+    <div class="list">
+        <div class="title-list">
+
+        </div>
+        <div>
+            <!-- <ul *ngIf="pastrie" class="list-inline">
+                <li class="list-inline-item" *ngFor="let pastrie of pastrie"></li>
+            </ul> -->
+        </div>
+    </div>
+</section>

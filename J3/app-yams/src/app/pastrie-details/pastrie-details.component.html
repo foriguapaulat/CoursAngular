@@ -1,9 +1,9 @@
 <p>pastrie-details works!</p>
 <section *ngIf="pastrie">
-    <div class="img">
-        <img src="" alt="">
-    </div>
     <div class="pastrie-card">
+        <div class="img">
+            <img *ngIf="pastrie.url" src="{{pastrie.url}}" alt="">
+        </div>
         <h2>{{pastrie.ref}}</h2>
         <h3>Nom: {{pastrie.name}}</h3>
         <button>Desc>></button>
@@ -13,9 +13,15 @@
 
         </div>
         <div>
-            <!-- <ul *ngIf="pastrie" class="list-inline">
-                <li class="list-inline-item" *ngFor="let pastrie of pastrie"></li>
+            <!-- <ul *ngIf="getIngredientsList(ingredients)" class="list-inline">
+                <li class="list-inline-item" *ngFor="let ingredient of getIngredientsList(ingredients)"></li>
+                {{ingredients}}
             </ul> -->
+            <ul class="list" *ngIf="getIngredients(pastrie.id)">
+                <li *ngFor="let ingredient of getIngredients(pastrie.id); first as first">
+                  {{ ingredient }} <span *ngIf="first">FIRST</span>
+                </li>
+            </ul>
         </div>
     </div>
 </section>

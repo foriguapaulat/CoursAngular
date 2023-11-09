@@ -14,6 +14,7 @@ export class PastriesComponent implements OnInit {
     titlePage: string = "Page principale : liste des pâtisseries à gagner";
     pastries: Pastrie[] = PASTRIES;
     selectedPastrie: Pastrie| null= null;
+    // borderColor = '';
 
     constructor() { }
     
@@ -25,4 +26,5 @@ export class PastriesComponent implements OnInit {
         console.log(pastrie);
 
     }
+
 }

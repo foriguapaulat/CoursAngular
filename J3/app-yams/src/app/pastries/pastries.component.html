@@ -2,9 +2,10 @@
 <section class="pastries-cards">
     <h1>{{ titlePage }}</h1>
         <div>
+            <p [appBorderCard]="'red'">Ce texte sera en rouge.</p>
             <ul *ngIf="pastries" class="list-inline">
 
-                <li class="list-inline-item" *ngFor="let pastrie of pastries">
+                <li [appBorderCard]="'red',2" class="list-inline-item" *ngFor="let pastrie of pastries">
                     <div class="title">
                         <h2>{{pastrie.ref}}</h2>
                     </div>
@@ -32,6 +33,10 @@
     <section>
         <div class="col-sm-4 video">
             <!-- PastrieDetails communication parent vers enfant -->
-            <app-pastrie-details [pastrie]="selectedPastrie" ></app-pastrie-details>
+            <app-pastrie-details [pastrie]="selectedPastrie"></app-pastrie-details>
         </div>
+        <!-- <div class="col-sm-4 video">
+            PastrieDetails communication parent vers enfant 
+            <app-pastrie-details [pastrie]="selectedPastrie" (changePreference)="changeParentPreference($event)"></app-pastrie-details>
+        </div>-->
     </section>    
